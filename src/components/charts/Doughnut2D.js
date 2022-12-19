@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Doughnut2D = () => {
+const Doughnut2d = () => {
   return (
     <div>chart</div>
   )
 }
 
-export default Doughnut2D
+export default Doughnut2d
