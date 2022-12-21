@@ -5,11 +5,11 @@ import { GoRepo, GoGist } from "react-icons/go";
 import { FiUsers, FiUserPlus } from "react-icons/fi";
 
 const UserInfo = () => {
-  const {string}=useGlobalContext()
-  
-  
-  
-  return <h2>user info component : {string}</h2>;
+  const { githubUser, githubRepos, githubFollowers } = useGlobalContext();
+  console.log("githubuser", githubUser);
+  console.log("githubrepos", githubRepos);
+  console.log("githubfollowers", githubFollowers);
+  return <h2>user info component : </h2>;
 };
 
 const Wrapper = styled.section`
