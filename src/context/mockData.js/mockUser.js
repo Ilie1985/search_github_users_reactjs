@@ -17,19 +17,19 @@ const mockUser= {
   "received_events_url": "https://api.github.com/users/Ilie1985/received_events",
   "type": "User",
   "site_admin": false,
-  "name": null,
+  "name": "Marian Ilie",
   "company": null,
   "blog": "",
-  "location": null,
+  "location": "London ,United Kingdom",
   "email": null,
   "hireable": null,
-  "bio": null,
+  "bio": "Hello! My name is Marian Ilie.\r\nI am a front-end web-developer and web designer .",
   "twitter_username": null,
   "public_repos": 59,
   "public_gists": 0,
   "followers": 3,
   "following": 3,
   "created_at": "2021-11-06T15:09:01Z",
-  "updated_at": "2022-12-14T14:20:59Z"
+  "updated_at": "2022-12-22T11:04:25Z"
   }
 export default mockUser
