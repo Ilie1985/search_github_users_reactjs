@@ -4,7 +4,7 @@ import { MdSearch } from "react-icons/md";
 import { useGlobalContext } from "../context/context";
 
 const Search = () => {
-  const { requests, error,searchGithubUser } = useGlobalContext();
+  const { requests, error, searchGithubUser, loading } = useGlobalContext();
 
   const [user, setUser] = useState("");
 
@@ -12,10 +12,9 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (user) {
-
-
-      searchGithubUser(user)
+      searchGithubUser(user);
       setUser("");
     }
   };
@@ -40,7 +39,7 @@ const Search = () => {
                 setUser(e.target.value);
               }}
             />
-            {requests > 0 && <button type="submit">search</button>}
+            {requests > 0 && !loading && <button type="submit">search</button>}
           </div>
         </form>
 

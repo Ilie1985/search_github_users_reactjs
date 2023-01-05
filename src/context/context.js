@@ -18,6 +18,7 @@ const AppProvider = ({ children }) => {
 
   const searchGithubUser = async (user) => {
     toggleError();
+    setLoading(true);
     const response = await axios(`${rootUrl}/users/${user}`).catch((err) => {
       console.log(error);
     });
@@ -30,6 +31,10 @@ const AppProvider = ({ children }) => {
     } else {
       toggleError(true, "there is no user with that username");
     }
+
+    checkRequests();
+
+    setLoading(false);
   };
 
   // const checkRequest = () => {
@@ -42,7 +47,7 @@ const AppProvider = ({ children }) => {
   //     });
   // };
 
-  const getData = async () => {
+  const checkRequests = async () => {
     const response = await fetch(`${rootUrl}/rate_limit`);
     const data = await response.json();
 
@@ -62,8 +67,7 @@ const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    // checkRequest();
-    getData();
+    checkRequests();
   }, []);
 
   return (
@@ -75,6 +79,7 @@ const AppProvider = ({ children }) => {
         requests,
         error,
         searchGithubUser,
+        loading,
       }}
     >
       {children}
