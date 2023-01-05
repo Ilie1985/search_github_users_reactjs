@@ -3394,7 +3394,7 @@ const mockRepos = [
   "web_commit_signoff_required": false,
   "topics": [],
   "visibility": "public",
-  "forks": 0,
+  "forks": 1,
   "open_issues": 0,
   "watchers": 0,
   "default_branch": "main"
@@ -5094,7 +5094,7 @@ const mockRepos = [
   "web_commit_signoff_required": false,
   "topics": [],
   "visibility": "public",
-  "forks": 0,
+  "forks": 2,
   "open_issues": 0,
   "watchers": 0,
   "default_branch": "main"
