@@ -6,7 +6,29 @@ import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from "./Charts";
 const Repos = () => {
   const { githubRepos } = useGlobalContext();
 
-  return <ExampleChart />;
+  const chartData = [
+    {
+      label: "HTML",
+      value: "13",
+    },
+    {
+      label: "CSS",
+      value: "23",
+    },
+    {
+      label: "Javascript",
+      value: "80",
+    },
+  ];
+
+  return (
+    <section className="section">
+      <Wrapper className="section-center">
+        <Pie3D data={chartData} />
+        {/* <ExampleChart data={chartData} />; */}
+      </Wrapper>
+    </section>
+  );
 };
 
 const Wrapper = styled.div`
