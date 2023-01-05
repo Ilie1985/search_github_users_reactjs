@@ -4,7 +4,7 @@ import { MdSearch } from "react-icons/md";
 import { useGlobalContext } from "../context/context";
 
 const Search = () => {
-  const { requests } = useGlobalContext();
+  const { requests, error } = useGlobalContext();
 
   const [user, setUser] = useState("");
 
@@ -20,6 +20,12 @@ const Search = () => {
   return (
     <section className="section">
       <Wrapper className="section-center">
+        {error.show && (
+          <ErrorWrapper>
+            <p>{error.msg}</p>
+          </ErrorWrapper>
+        )}
+
         <form onSubmit={handleSubmit}>
           <div className="form-control">
             <MdSearch />
