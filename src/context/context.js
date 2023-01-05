@@ -16,6 +16,22 @@ const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({ show: false, msg: "" });
 
+  const searchGithubUser = async (user) => {
+    toggleError();
+    const response = await axios(`${rootUrl}/users/${user}`).catch((err) => {
+      console.log(error);
+    });
+    console.log(response);
+
+    if (response) {
+      setGithubUser(response.data);
+
+      //more logic here
+    } else {
+      toggleError(true, "there is no user with that username");
+    }
+  };
+
   // const checkRequest = () => {
   //   axios(`${rootUrl}/rate_limit`)
   //     .then((data) => {
@@ -34,7 +50,6 @@ const AppProvider = ({ children }) => {
       rate: { remaining },
     } = data;
 
-   
     setRequests(remaining);
 
     if (remaining === 0) {
@@ -53,7 +68,14 @@ const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ githubUser, githubRepos, githubFollowers, requests, error }}
+      value={{
+        githubUser,
+        githubRepos,
+        githubFollowers,
+        requests,
+        error,
+        searchGithubUser,
+      }}
     >
       {children}
     </AppContext.Provider>
