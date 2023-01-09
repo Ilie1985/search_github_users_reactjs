@@ -6,7 +6,6 @@ import * as serviceWorker from "./serviceWorker";
 import { AppProvider } from "./context/context";
 import { Auth0Provider } from "@auth0/auth0-react";
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   //domain-  dev-32h2yox6z3mfz8rm.us.auth0.com
@@ -16,6 +15,7 @@ root.render(
       domain={process.env.REACT_APP_DOMAIN}
       clientId={process.env.REACT_APP_CLIENT}
       redirectUri={window.location.origin}
+      cacheLocation="localstorage"
     >
       <AppProvider>
         <App />
